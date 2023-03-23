@@ -77,7 +77,7 @@ Les listes littérales s'écrivent entre crochets, et les éléments sont sépar
 ``` 
 list = [True, 12.7, "Bonjour"]
 ```
-<br />
+
 Une liste peut contenir tous types d'objets (chaîne de caractères, booléens, nombres, et même d'autres listes).
 Les listes sont indentés de 0 à n-1, avec n la taille de la liste.
 Pour accéder à l'élément en position k, la syntaxe est:
@@ -104,7 +104,7 @@ else
 #Fait encore autre chose...
 }
 ```
-<br />
+
 Notez que ces blocs peuvent parfaitement s'écrire sur une seule ligne, en prenant soin de séparer les expressions par des points virgules.
 Seul le bloc ```if``` est obligatoire, les blocs ```elif``` et ```else``` ne sont pas forcément nécessaires à la suite d'un bloc ```if```.
 ### Les boucles
