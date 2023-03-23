@@ -31,7 +31,7 @@ Il existe 3 types de base :
         ``` +, -, *, / ```
   - La puissance:
         ``` ** ```
-  - Le quotien d'une division euclidienne:
+  - Le quotient d'une division euclidienne:
        ``` % ```
 
 ##### Opérateurs booléens
@@ -50,28 +50,48 @@ Il existe 3 types de base :
 Notez que l'affectation est une expression comme les autres
 
 - Opérateurs combinés
-```
-    x = x + 12 => x += 12
-    x = x - 12 => x -= 12
-    x = x * 12 => x *= 12
-    x = x / 12 => x /= 12
-    x = x + 1 => x++
-    x = x - 1 => x--
-```
+
+| Opérateurs simplifié | Équivalent |
+|----------------------|------------|
+|``` x += 12 ``` | ``` x = x + 12 ``` |
+|``` x -= 12 ``` | ``` x = x - 12 ``` |
+|``` x *= 12 ``` | ``` x = x * 12 ``` |
+|``` x /= 12 ``` | ``` x = x / 12 ``` |
+|``` x++ ``` | ``` x = x + 1``` |
+|``` x-- ``` | ``` x = x - 1 ``` |
+
 
 ##### Opérateurs spéciaux
 - ``` &foo ```: renvoie le nom de la variable foo dans une chaîne de caractères.
-- ```:"foo"```: Renvoie la valeur de la variable foo
-- ```foo -> newVar``` 
+- ```:foo```: Renvoie la valeur de la variable foo
+- ```var -> foo```: associe la valeur var à foo, à la manière d'un pointeur en C.
+
+__Exemple__
+```
+    neon@ready> foo
+    Erreur : Variable non definie.
+    neon@ready> foo = "string"
+    -type : <String> = "string"
+    neon@ready> 5 -> foo
+    -type : <Number> = 5
+    neon@ready> foo
+    -type : <Number> = 5
+    neon@ready> :foo
+    -type : <Number> = 5
+    neon@ready> &string
+    -type : <String> = "var"
+```
 
 
 ### Les fonctions
 
-La syntaxe pour appeller les fonction est la suivante:
+La syntaxe pour appeler des fonctions qui sont déjà définies est la suivante:
 
 ```
 fonction(arg1, arg2, ..., arg n)
 ```
+
+Notez toutefois que Neon ne permet pas encore de créer ses propres fonctions.
 
 ### Les listes
 
@@ -124,13 +144,13 @@ else
 
 Notez que ces blocs peuvent parfaitement s'écrire sur une seule ligne, en prenant soin de séparer les expressions par des points virgules.
 
-Seul le block ```if``` est obligatoire, les blocks ```elif``` et ```else``` ne sont pas forcément nécessaires à la suite d'un bloc ```if```.
+Seul le bloc ```if``` est obligatoire, les blocs ```elif``` et ```else``` ne sont pas forcément nécessaires à la suite d'un bloc ```if```.
 
 ### Les boucles
 
 ##### Boucle while
 
-Les boucles whiles s'écrivent comme suit:
+Les boucles while s'écrivent comme suit:
 
 ```
 while (condition)
